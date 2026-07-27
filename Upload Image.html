@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Upload Your Image — PhotoTo3DModel AI</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .upload-section { padding: 4rem 0; }
+    .upload-shell { display: flex; flex-direction: column; gap: 1.25rem; align-items: center; }
+    .upload-area { width: min(680px, 92%); padding: 2rem; border-radius: 1rem; text-align: center; border: 2px dashed rgba(255,255,255,0.08); background: rgba(255,255,255,0.02); }
+    .upload-area.dragover { border-color: rgba(59,130,246,0.5); box-shadow: 0 12px 32px rgba(59,130,246,0.08); }
+    #fileName { color: var(--muted); margin-top: 0.75rem; }
+    #uploadMessage { margin-top: 0.5rem; color: var(--blender); font-weight: 700; }
+    .small-note { color: var(--muted); margin-top: 0.5rem; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-bar">
+      <a class="brand" href="index.html">
+        <span class="brand-icon">📷 →</span>
+        <span class="brand-copy">3D Model AI</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="#">Features</a>
+        <a href="#">Gallery</a>
+        <a href="#">Pricing</a>
+        <a href="#">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section upload-section">
+      <div class="container section-heading">
+        <h2>Upload Your Image</h2>
+        <p>Drag & drop a PNG or JPG image, or pick a file to start generating a 3D model.</p>
+      </div>
+
+      <div class="container upload-shell">
+        <div id="uploadArea" class="upload-area">
+          <p style="font-weight:700;">Drag & Drop Image</p>
+          <p class="small-note">or</p>
+          <button id="pickFileBtn" class="btn btn-secondary" type="button">Upload Photo</button>
+          <input id="imageInput" type="file" accept="image/png, image/jpeg" multiple style="display:none" />
+          <div id="fileName"></div>
+        </div>
+
+        <button id="generateBtn" class="btn btn-primary" type="button">Generate 3D Model</button>
+        <p id="uploadMessage" class="small-note"></p>
+      </div>
+    </section>
+  </main>
+
+  <script src="Upload_Image.js"></script>
+</body>
+</html>
